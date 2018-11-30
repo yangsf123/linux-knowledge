@@ -1,0 +1,16 @@
+# Linux CPU Usage Calculate
+> http://www.blogjava.net/fjzag/articles/317773.html
+
+proc文件系统
+/proc文件系统是一个伪文件系统，它只存在内存当中，而不占用外存空间。它以文件系统的方式为内核与进程提供通信的接口。用户和应用程序可以通过/proc得到系统的信息，并可以改变内核的某些参数。由于系统的信息，如进程，是动态改变的，所以用户或应用程序读取/proc目录中的文件时，proc文件系统是动态从系统内核读出所需信息并提交的。
+
+/proc目录中有一些以数字命名的目录，它们是进程目录。系统中当前运行的每一个进程在/proc下都对应一个以进程号为目录名的目录/proc/pid，它们是读取进程信息的接口。此外，在Linux 2.6.0-test6以上的版本中/proc/pid目录中有一个task目录，/proc/pid/task目录中也有一些以该进程所拥有的线程的线程号命名的目录/proc/pid/task/tid，它们是读取线程信息的接口。
+
+
+## CPU Usage
+
+
+## Proc CPU Usage
+
+
+## Thread CPU Usage
