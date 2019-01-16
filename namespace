@@ -1,0 +1,17 @@
+# Linux namespace
+> link reference https://lwn.net/Articles/531114/
+
+Linux 实现六种类型的 Namespace: Mount namespace、UTS namespaces、IPC namespaces、PID namespaces、Network namespaces、User namespaces
+每种类型的命名空间的目的是将特定的全局系统资源包装在抽象中，从而使命名空间中的进程看起来像是拥有自己全局资源的独立实例
+
+- Mount namespace
+
+- UTS namespace
+
+- IPC namespace
+
+- PID namespace
+
+- Network namespace
+
+- User namespace
