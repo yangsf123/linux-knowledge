@@ -1,0 +1,22 @@
+# 文件批量编码方法
+
+
+## 以搜狗新闻语料库文件为例，源txt文件以`Non-ISO extended-ASCII`方式编码
+
+### 1.首先，一一检测各文件源编码方式
+
+iconv --list | sed 's/\/\/$//' | sort > encodings.list
+
+for a in `cat encodings.list`; do
+  printf "$a  "
+  iconv -f $a -t UTF-8 systeminfo.txt > /dev/null 2>&1 \
+    && echo "ok: $a" || echo "fail: $a"
+done | tee result.txt
+
+### 2.遍历result.txt文件中，查找尝试那些没有fail的编码方式。最后`-f CP850 -t UTF-8`文件正好。使用如下命令转换
+
+iconv -f CP850 -t UTF-8 new.allsites.*.txt > ../new.allsites.*.txt
+
+### 3.查看转换后的文件编码
+
+file new.allsites.*.txt
