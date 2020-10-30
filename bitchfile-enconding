@@ -15,7 +15,9 @@ done | tee result.txt
 
 ### 2.遍历result.txt文件中，查找尝试那些没有fail的编码方式。最后`-f CP850 -t UTF-8`文件正好。使用如下命令转换
 
-iconv -f CP850 -t UTF-8 new.allsites.*.txt > ../new.allsites.*.txt
+for f in `ls`; do 
+  iconv -f CP850 -t UTF-8 $f > ../datamining/corpus/$f; 
+done
 
 ### 3.查看转换后的文件编码
 
