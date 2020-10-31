@@ -22,3 +22,6 @@ done
 ### 3.查看转换后的文件编码
 
 file new.allsites.*.txt
+
+### 4.批量修改文件名称
+rename txt.out doc *
